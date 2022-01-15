@@ -1,0 +1,11 @@
+from;Herr Waitz;Herr Stiller;Herr Mahr;Herr Klaiber;Herr Bangert;Frau Kübler;Herr Zahn;Herr Nicklas;Frau Drecker;Herr Eberle
+Herr Waitz;0;1;0;0;0;1;1;0;0;1
+Herr Stiller;1;0;;;1;1;;;;1
+Herr Mahr;0;0;;1;;1;;;;
+Herr Klaiber;0;0;1;;;1;;1;;1
+Herr Bangert;0;1;;;;;;1;;1
+Frau Kübler;1;1;;1;;;1;1;;
+Herr Zahn;1;0;;1;;1;;1;;
+Herr Nicklas;0;0;;1;1;;;;;1
+Frau Drecker;0;0;;;1;1;;;;
+Herr Eberle;1;1;;1;1;;1;1;;
