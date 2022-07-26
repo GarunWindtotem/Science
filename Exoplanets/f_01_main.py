@@ -1,4 +1,5 @@
-from matplotlib.cbook import print_cycles
+import os
+# from matplotlib.cbook import print_cycles
 from f_02_now import f_now
 from f_03_options import f_options
 from f_04_df import f_df
@@ -13,12 +14,13 @@ now = f_now()
 bool_period_Earth = f_options()
 
 # function 04
-pfad = "D:\\Github\\Science\\Exoplanets\\"
+
+# pfad = "D:\\Github\\Science\\Exoplanets\\"
+pfad = str(os.path.abspath(os.getcwd()))+ "\\"
 
 
+# 
 df = f_df(pfad)
-
-# function 05
 df = f_solarSystem(df)
 
 # filter
@@ -29,32 +31,36 @@ df, max_größe = f_df_filter(df, filter_Rp_ERadia, bubble_size, filter_argument
 
 # function 06
 name_chart = "Exoplanets_1"
-f_visualize1(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia)
+f_visualize1(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, max_größe)
 
 
 # function 07
 df = f_df(pfad)
 # filter
-filter_Rp_ERadia = 1000
+filter_Rp_ERadia = 100
 bubble_size = 100
 filter_argument = "<"
 df, max_größe = f_df_filter(df, filter_Rp_ERadia, bubble_size, filter_argument)
 
 # filter
 name_chart = "Exoplanets_2"
-f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia)
+bool_textfield = False
+f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, bool_textfield, max_größe)
 
 
 # function 08
 df = f_df(pfad)
+df = f_solarSystem(df)
 # filter
 filter_Rp_ERadia = 2
 bubble_size = 30
 filter_argument = "<"
+
 df, max_größe = f_df_filter(df, filter_Rp_ERadia, bubble_size, filter_argument)
 
 name_chart = "Exoplanets_3"
-f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia)
+bool_textfield = True
+f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, bool_textfield, max_größe)
 
 
 # function 08
@@ -66,7 +72,8 @@ filter_argument = ">"
 df, max_größe = f_df_filter(df, filter_Rp_ERadia, bubble_size, filter_argument)
 
 name_chart = "Exoplanets_4"
-f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia)
+bool_textfield = False
+f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, bool_textfield, max_größe)
 
 
 print('fertig')

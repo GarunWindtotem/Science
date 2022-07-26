@@ -1,7 +1,8 @@
 from matplotlib import pyplot as plt
 from matplotlib.ticker import FuncFormatter
+import matplotlib.patches as mpatches
 
-def f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia):
+def f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, bool_textfield, max_größe):
 
     plt.clf()
 
@@ -48,32 +49,41 @@ def f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia):
            # markeredgecolor = 'white',
             label = "") for idx, row in df.iterrows()]
 
-    ax.set_xlabel("Stellar surface gravity", color="black", fontsize=25)
+    ax.set_xlabel("Stellar surface gravity -> log10(g[cm/s²])", color="black", fontsize=25)
     ax.set_ylabel("Period in days", color="black", fontsize=25)
     ax.set_yscale('log')
     # ax.set_xscale('log')
 
     ax.tick_params(labelsize=25)
 
-    # plt.legend(loc='center',
-    #            bbox_to_anchor=(0.5, -0.25),
-    #            fancybox=True,
-    #            shadow=True,
-    #            ncol=3,
-    #            fontsize=20)
+    red_patch = mpatches.Patch(color='red', label = 'T > 373 K')
+    blue_patch = mpatches.Patch(color='blue', label = 'T < 273 K')
+    yellow_patch = mpatches.Patch(color='yellow', label = 'T between 282 and 292 K')
+    green_patch = mpatches.Patch(color='green', label = 'T between 273 and 373 K')
+    # ax.legend(handles=[red_patch])
+
+    plt.legend(loc='center',
+                handles=[blue_patch, red_patch, green_patch, yellow_patch],
+                bbox_to_anchor=(0.5, -0.25),
+                fancybox=True,
+                shadow=True,
+                ncol=4,
+                fontsize=20)
 
     plt.title(f' Exoplanetes (Data: NASA) \n\n', fontsize=25)
 
 
     # place a text box in upper left in axes coords
     #      (x, y)
-    # ax.text(0.05, 0.76, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    # ax.text(0.05, 0.71, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    # ax.text(0.05, 0.665, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    # ax.text(0.05, 0.59, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    # ax.text(0.78, 0.72, "Kepler-452 b", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    # ax.text(0.73, 0.61, "Kepler-62 e", transform=ax.transAxes, fontsize=16, verticalalignment='top')
 
-    plt.suptitle(f'Filter: radius {filter_argument} {filter_Rp_ERadia} Earth Radia \n https://catalogs.mast.stsci.edu/eaot# \n {now} PW', fontsize=15, y=0.95)
+    if bool_textfield == True:
+        ax.text(0.397, 0.98, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.397, 0.915, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.397, 0.86, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.397, 0.76, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        """     ax.text(0.78, 0.72, "Kepler-452 b", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.73, 0.61, "Kepler-62 e", transform=ax.transAxes, fontsize=16, verticalalignment='top') """
+
+    plt.suptitle(f'Filter: radius {filter_argument} {filter_Rp_ERadia}, max= {max_größe}  Earth Radia \n https://catalogs.mast.stsci.edu/eaot# \n {now} PW', fontsize=15, y=0.95)
 
     plt.savefig(f'{pfad}{name_chart}.png', dpi=300, bbox_inches='tight')

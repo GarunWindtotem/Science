@@ -10,7 +10,8 @@ def f_solarSystem(df):
             'Teff': '',
             'Rp_ERadia': 1.0,
             'Distance_LJ': 1,
-            'period_Earth': 365
+            'period_Earth': 365,
+            'log10g_s': 4.43
         }
 
     dict_Mercury = {'Planet_Name': 'Mercury',
@@ -23,7 +24,8 @@ def f_solarSystem(df):
             'Teff': '',
             'Rp_ERadia': 0.3829,
             'Distance_LJ': 1,
-            'period_Earth': 365
+            'period_Earth': 365,
+            'log10g_s': 4.43
         }
 
     dict_Mars = {'Planet_Name': 'Mars',
@@ -36,7 +38,8 @@ def f_solarSystem(df):
             'Teff': '',
             'Rp_ERadia': 0.533,
             'Distance_LJ': 1,
-            'period_Earth': 365
+            'period_Earth': 365,
+            'log10g_s': 4.43
         }
 
     dict_Venus = {'Planet_Name': 'Venus',
@@ -49,14 +52,13 @@ def f_solarSystem(df):
             'Teff': '',
             'Rp_ERadia': 0.9499,
             'Distance_LJ': 1,
-            'period_Earth': 365
+            'period_Earth': 365,
+            'log10g_s': 4.43
         }
 
     df = df.append(dict_Earth, ignore_index = True)
     df = df.append(dict_Mercury, ignore_index = True)
     df = df.append(dict_Mars, ignore_index = True)
     df = df.append(dict_Venus, ignore_index = True)
-
-    df.head(-1)
 
     return(df)
