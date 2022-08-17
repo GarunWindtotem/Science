@@ -7,6 +7,10 @@ from f_05_solarSystem import f_solarSystem
 from f_06_visualize1 import f_visualize1
 from f_07_visualize2 import f_visualize2
 from f_04_df_filter import f_df_filter
+from image import image_resize_append
+
+import sys
+import subprocess
 
 # function 02
 now = f_now()
@@ -75,5 +79,11 @@ name_chart = "Exoplanets_4"
 bool_textfield = False
 f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, bool_textfield, max_größe)
 
+image_resize_append()
+
+
+path = r'C:\Program Files (x86)\IronPython 2.7\Lib'
+sys.path.append(path)
+subprocess.Popen('explorer "D:\\Github\\Science\\Exoplanets"')
 
 print('fertig')
