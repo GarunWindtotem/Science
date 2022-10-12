@@ -45,8 +45,8 @@ def f_visualize1(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, m
             markersize=row['marker_size']*1, 
             alpha=1, 
             color = "yellow" if 282 <= row['Teq'] <= 292 else 'None',
-            markeredgewidth=0.5,
-            markeredgecolor = 'black',
+           # markeredgewidth=0.5,
+           # markeredgecolor = 'black',
             label = "") for idx, row in df.iterrows()]
 
     ax.set_xlabel("Distance in Lightyears", color="black", fontsize=25)
@@ -75,12 +75,12 @@ def f_visualize1(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, m
 
     # place a text box in upper left in axes coords
     #      (x, y)
-    ax.text(0.05, 0.76, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    ax.text(0.05, 0.71, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    ax.text(0.05, 0.665, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    ax.text(0.05, 0.59, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    ax.text(0.78, 0.72, "Kepler-452 b", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-    ax.text(0.73, 0.61, "Kepler-62 e", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.05, 0.98, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.05, 0.91, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.05, 0.86, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.05, 0.75, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.78, 0.92, "Kepler-452 b", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+    ax.text(0.72, 0.79, "Kepler-62 e", transform=ax.transAxes, fontsize=16, verticalalignment='top')
 
     plt.suptitle(f'Filter: radius {filter_argument} {filter_Rp_ERadia}, max= {max_größe} Earth Radia \n https://catalogs.mast.stsci.edu/eaot# \n {now} PW', fontsize=15, y=0.95)
     plt.savefig(f'{pfad}{name_chart}.png', dpi=300, bbox_inches='tight')

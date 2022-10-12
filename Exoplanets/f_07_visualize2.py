@@ -77,10 +77,10 @@ def f_visualize2(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, b
     #      (x, y)
 
     if bool_textfield == True:
-        ax.text(0.397, 0.98, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-        ax.text(0.397, 0.915, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-        ax.text(0.397, 0.86, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
-        ax.text(0.397, 0.76, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.464, 0.98, "Mars", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.464, 0.915, "Earth", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.464, 0.86, "Venus", transform=ax.transAxes, fontsize=16, verticalalignment='top')
+        ax.text(0.464, 0.76, "Mercury", transform=ax.transAxes, fontsize=16, verticalalignment='top')
         """     ax.text(0.78, 0.72, "Kepler-452 b", transform=ax.transAxes, fontsize=16, verticalalignment='top')
         ax.text(0.73, 0.61, "Kepler-62 e", transform=ax.transAxes, fontsize=16, verticalalignment='top') """
 
