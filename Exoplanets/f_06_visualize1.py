@@ -84,3 +84,4 @@ def f_visualize1(df, pfad, now, name_chart, filter_argument, filter_Rp_ERadia, m
 
     plt.suptitle(f'Filter: radius {filter_argument} {filter_Rp_ERadia}, max= {max_größe} Earth Radia \n https://catalogs.mast.stsci.edu/eaot# \n {now} PW', fontsize=15, y=0.95)
     plt.savefig(f'{pfad}{name_chart}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'D:\\OneDrive\\Github Output\\{name_chart}.png', dpi=300, bbox_inches='tight')
